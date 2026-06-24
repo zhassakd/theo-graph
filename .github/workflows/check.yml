@@ -1,0 +1,61 @@
+name: Lint & Validate
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v17
+        with:
+          globs: '**/*.md'
+          config: |
+            {
+              "default": true,
+              "MD013": false,
+              "MD033": false,
+              "MD041": false,
+              "MD025": false
+            }
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check internal [[wiki]] links
+        run: |
+          echo "Checking internal wiki links..."
+          python3 -c "
+          import os, re, sys
+          errors = []
+          md_files = {}
+          for root, dirs, files in os.walk('.'):
+              if '.git' in root: continue
+              for f in files:
+                  if f.endswith('.md'):
+                      rel_path = os.path.join(root, f).replace(chr(92), '/').lstrip('./')
+                      md_files[os.path.splitext(f)[0]] = rel_path
+          for filepath, _ in md_files.items():
+              full = md_files[filepath]
+              try:
+                  with open(full, 'r', encoding='utf-8') as fh:
+                      content = fh.read()
+              except:
+                  continue
+              for m in re.finditer(r'\[\[([^\]|#]+)(\|[^\]]+)?\]\]', content):
+                  target = m.group(1).split('/')[-1]
+                  if target not in md_files:
+                      errors.append(f'  {full}: [[{m.group(1)}]] -> target not found ({target})')
+          if errors:
+              print(f'{len(errors)} broken internal links found:')
+              for e in errors: print(e)
+              sys.exit(1)
+          else:
+              print('All internal [[wiki]] links are valid!')
+          "

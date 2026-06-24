@@ -117,7 +117,7 @@ theo-graph/
 ### 🧠 在 Obsidian 中打开
 
 ```bash
-git clone https://github.com/zhangpengcheng/theo-graph.git
+git clone https://github.com/zhassakd/theo-graph.git
 # 用 Obsidian 打开 theo-graph 文件夹作为 vault
 ```
 
