@@ -157,6 +157,22 @@ git clone https://github.com/zhassakd/theo-graph.git
 
 ---
 
+## 相关资源
+
+以下开源项目为神学数据的结构化、程序化访问提供了基础：
+
+| 项目 | 内容 | 规模 |
+|---|---|---|
+| [OpenChristianData](https://github.com/OpenChristianData/open-christian-data) | 圣经、注释、教理、教父著作，JSON格式 | 27万+条 |
+| [AquinasOperaOmnia](https://github.com/Geremia/AquinasOperaOmnia) | 阿奎那全集（拉丁-英文对照）| 分卷 |
+| [catholicism-in-json](https://github.com/aseemsavio/catholicism-in-json) | 《天主教教理》《教会法典》，JSON格式 | 可嵌入 |
+| [summa.json](https://github.com/Jacob-Gray/summa.json) | 《神学大全》结构化JSON | 完整 |
+| [CatholicCorpus](https://github.com/CatholicCorpus/catholiccorpus) | 天主教文本大规模语料库 | 2.6B词 |
+| [awesome-theology](https://github.com/historical-theology/awesome-theology) | 开源天主教神学工具清单 | 整理索引 |
+| [awesome-bible-dev](https://github.com/biblenerd/awesome-bible-developer-resources) | 圣经开发资源（格式、API、语料）| 索引 |
+
+---
+
 ## 贡献
 
 欢迎提交 Pull Request 补充概念、修正错误、改进表述。
