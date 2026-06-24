@@ -7,9 +7,13 @@ __pycache__/
 *.pyc
 
 # Temporary scripts and output files
-*.py
 *.txt
 !README.md
+
+# Tool scripts in scripts/ and root are OK
+!scripts/*.py
+!build_graph.py
+!process_summa.py
 
 # OS files
 .DS_Store
