@@ -1,0 +1,20 @@
+# Obsidian config - personal settings, not part of the knowledge base
+.obsidian/
+.obsidian*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary scripts and output files
+*.py
+*.txt
+!README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.epub
+*.pdf
