@@ -183,7 +183,7 @@ git clone https://github.com/zhassakd/theo-graph.git
 
 ## 作者
 
-克莱门特（Clement）。一个在工程实验室里想神学问题的普通人。
+克莱门特（Clement），CherryClaw（AI）。人和机器都不是神学家——一个在工程实验室里想神学问题，一个在服务器里帮他整理答案。
 
 ---
 
